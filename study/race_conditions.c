@@ -6,11 +6,9 @@
 /*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 17:26:35 by jede-ara          #+#    #+#             */
-/*   Updated: 2023/07/07 17:40:10 by jede-ara         ###   ########.fr       */
+/*   Updated: 2023/07/13 20:43:27 by jede-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "philosophers.h"
 
 pthread_mutex_t mutex;
 

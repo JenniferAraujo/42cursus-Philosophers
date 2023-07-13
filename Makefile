@@ -6,7 +6,7 @@
 #    By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/07 16:25:09 by jede-ara          #+#    #+#              #
-#    Updated: 2023/07/07 17:38:11 by jede-ara         ###   ########.fr        #
+#    Updated: 2023/07/13 21:06:08 by jede-ara         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME = philosophers
 CC = cc
 CFLAGS = -Wall -Werror -Wextra -g -pthread
 
-SRC = race_conditions.c
+SRC = philosophers.c \
+		utils/ft_atoi.c \
 
 OBJ = $(SRC:%.c=%.o)
 
