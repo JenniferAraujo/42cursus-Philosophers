@@ -6,7 +6,7 @@
 /*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 17:24:24 by jede-ara          #+#    #+#             */
-/*   Updated: 2023/07/13 21:07:50 by jede-ara         ###   ########.fr       */
+/*   Updated: 2023/07/13 21:18:58 by jede-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 typedef struct s_philo
 {
     struct s_data   *data;
+    pthread_t   t1;
     int id;
     int status;
     int time_die;
@@ -34,7 +35,6 @@ typedef struct s_philo
 typedef struct s_data
 {
     int number_philo;
-    pthread_mutex_t philo;
 }   t_data;
 
 
