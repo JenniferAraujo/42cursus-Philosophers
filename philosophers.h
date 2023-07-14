@@ -6,7 +6,7 @@
 /*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 17:24:24 by jede-ara          #+#    #+#             */
-/*   Updated: 2023/07/13 21:18:58 by jede-ara         ###   ########.fr       */
+/*   Updated: 2023/07/14 15:02:26 by jede-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,12 @@ typedef struct s_data
 void    *routine();
 int main(int ac, char **av);
 
-/*                          UTILS                         */
+/*                         UTILS                    */
 long long	ft_atoi(const char *str);
+
+/*                          ACTIONS                 */
+void    eat(t_philo *philo);
+void    take_fork(t_philo   *philo);
+void    drop_fork(t_philo   *philo);
 
 #endif

@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   philosophers.c                                     :+:      :+:    :+:   */
+/*   take_fork.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/13 20:43:15 by jede-ara          #+#    #+#             */
-/*   Updated: 2023/07/13 20:50:55 by jede-ara         ###   ########.fr       */
+/*   Created: 2023/07/14 15:00:03 by jede-ara          #+#    #+#             */
+/*   Updated: 2023/07/14 15:00:14 by jede-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philosophers.h"
+#include "../philosophers.h"
 
-void    *routine()
-{
-    
-}
-
-int main(int ac, char **av)
+void    take_fork(t_philo   *philo)
 {
     
 }
