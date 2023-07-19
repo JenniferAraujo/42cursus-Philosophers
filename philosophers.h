@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jennifera <jennifera@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 17:24:24 by jede-ara          #+#    #+#             */
-/*   Updated: 2023/07/14 20:17:29 by jede-ara         ###   ########.fr       */
+/*   Updated: 2023/07/19 11:45:27 by jennifera        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,14 @@ typedef struct s_list
 
 
 /*                          INIT                  */
+int     validations_args(char **av);
 void    *routine();
 int     main(int ac, char **av);
 
 /*                         UTILS                    */
 long long	ft_atoi(const char *str);
+int         is_digit(char *str);
+int         is_positive(char *str);
 
 /*                          ACTIONS                 */
 void    eat(t_philo *philo);

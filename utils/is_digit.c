@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   take_fork.c                                        :+:      :+:    :+:   */
+/*   is_digit.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jennifera <jennifera@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/14 15:00:03 by jede-ara          #+#    #+#             */
-/*   Updated: 2023/07/19 11:49:29 by jennifera        ###   ########.fr       */
+/*   Created: 2023/07/19 11:29:32 by jennifera         #+#    #+#             */
+/*   Updated: 2023/07/19 11:30:08 by jennifera        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../philosophers.h"
+#include "philosophers.h"
 
-void    take_fork(t_philo   *philo)
+int	is_digit(char *str)
 {
+	int	i;
 
+	i = -1;
+	while (str[++i])
+		if ((str[i] < '0' || str[i] > '9') && str[i] != '+' && str[i] != '-')
+			return (0);
+	return (1);
 }

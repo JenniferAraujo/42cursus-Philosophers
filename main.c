@@ -3,20 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jennifera <jennifera@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 20:43:15 by jede-ara          #+#    #+#             */
-/*   Updated: 2023/07/14 19:21:05 by jede-ara         ###   ########.fr       */
+/*   Updated: 2023/07/19 11:48:07 by jennifera        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-void    *routine()
+/*void    *routine()
 {
     pthread_t    
-}
-
+}*/
 
 int    init_args(t_list *list, int ac, char **av)
 {
@@ -30,14 +29,15 @@ int    init_args(t_list *list, int ac, char **av)
         list->number_meals = -1;
     if (list->number_philo <= 0 || list->number_philo > 200 || list->time_of_death < 0
 		|| list->time_eat < 0 || list->time_sleep < 0)
-		return (ft_error());
+		return (0); //ft_erorr
 }
 
 int main(int ac, char **av)
 {
-    t_list  *list;
+    //t_list  *list;
     
     if (ac < 5 || ac > 6)
         return (0);
-    
+    if (!validations_args(av))
+		return (0); //ft_erorr
 }

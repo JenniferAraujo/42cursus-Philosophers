@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+         #
+#    By: jennifera <jennifera@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/07 16:25:09 by jede-ara          #+#    #+#              #
-#    Updated: 2023/07/14 15:05:01 by jede-ara         ###   ########.fr        #
+#    Updated: 2023/07/19 11:49:06 by jennifera        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,14 @@ CC = cc
 CFLAGS = -Wall -Werror -Wextra -g -pthread
 
 SRC = main.c \
+		actions/drop_fork.c \
+		actions/eat.c \
+		actions/take_fork.c \
+		check/ft_error.c \
+		check/validations_args.c \
 		utils/ft_atoi.c \
+		utils/is_digit.c \
+		utils/is_positive.c \
 
 OBJ = $(SRC:%.c=%.o)
 
