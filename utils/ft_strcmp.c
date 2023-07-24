@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   eat.c                                              :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jennifera <jennifera@student.42.fr>        +#+  +:+       +#+        */
+/*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/14 14:53:34 by jede-ara          #+#    #+#             */
-/*   Updated: 2023/07/19 11:22:27 by jennifera        ###   ########.fr       */
+/*   Created: 2023/07/24 15:51:55 by jede-ara          #+#    #+#             */
+/*   Updated: 2023/07/24 15:53:17 by jede-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../philosophers.h"
 
-void    eat(t_philo *philo)
+int	ft_strcmp(char *s1, char *s2)
 {
-    if (philo->id % 2 != 0)
-
-    else
-        
+	int	i = 0;
+	
+	while(s1[i] && s2[i] && s1[i] == s2[i])
+		i++;
+	return (s1[i] - s2[i]);
 }

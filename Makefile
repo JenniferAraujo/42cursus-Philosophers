@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jennifera <jennifera@student.42.fr>        +#+  +:+       +#+         #
+#    By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/07 16:25:09 by jede-ara          #+#    #+#              #
-#    Updated: 2023/07/19 11:49:06 by jennifera        ###   ########.fr        #
+#    Updated: 2023/07/24 15:53:57 by jede-ara         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRC = main.c \
 		utils/ft_atoi.c \
 		utils/is_digit.c \
 		utils/is_positive.c \
+		utils/ft_strcmp.c \
 
 OBJ = $(SRC:%.c=%.o)
 
