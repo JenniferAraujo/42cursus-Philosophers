@@ -6,7 +6,7 @@
 /*   By: jennifera <jennifera@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 20:43:15 by jede-ara          #+#    #+#             */
-/*   Updated: 2023/07/19 11:48:07 by jennifera        ###   ########.fr       */
+/*   Updated: 2023/07/24 13:10:26 by jennifera        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,15 @@
 /*void    *routine()
 {
     pthread_t    
+}
+void    init_philo()
+{
+    int i;
+    t_list *philos;
+
+    philos = malloc(sizeof(t_list) number_philo); //rever isso aqui
+    
+    
 }*/
 
 int    init_args(t_list *list, int ac, char **av)
