@@ -6,16 +6,20 @@
 /*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 14:59:27 by jede-ara          #+#    #+#             */
-/*   Updated: 2023/07/24 20:41:53 by jede-ara         ###   ########.fr       */
+/*   Updated: 2023/07/25 17:48:40 by jede-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../philosophers.h"
 
-void	ft_drop_forks(t_philo *philo)
+int	*ft_drop_forks(t_philo *philo)
 {
-	pthread_mutex_unlock(philo->left_fork);
-	pthread_mutex_unlock(philo->right_fork);
-	ft_message(philo, "is sleeping");
-	ft_usleep(philo->list->time_sleep);
+	t_philo	*philosopher;
+
+	philosopher = (t_philo *)philo;
+	pthread_mutex_unlock(&(philosopher->data->forks[philosopher->right_fork]));
+	pthread_mutex_unlock(&(philosopher->data->forks[philosopher->left_fork]));
+	ft_message(philo, SLEEPING);
+	//ft_usleep(philo->data->time_to_sleep);
+	return (0);
 }

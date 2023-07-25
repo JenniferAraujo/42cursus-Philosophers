@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   is_digit.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jennifera <jennifera@student.42.fr>        +#+  +:+       +#+        */
+/*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 11:29:32 by jennifera         #+#    #+#             */
-/*   Updated: 2023/07/19 11:30:08 by jennifera        ###   ########.fr       */
+/*   Updated: 2023/07/25 17:27:35 by jede-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philosophers.h"
+#include "../philosophers.h"
 
 int	is_digit(char *str)
 {

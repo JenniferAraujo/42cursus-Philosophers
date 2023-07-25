@@ -6,11 +6,11 @@
 /*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 21:02:49 by jede-ara          #+#    #+#             */
-/*   Updated: 2023/07/13 21:03:54 by jede-ara         ###   ########.fr       */
+/*   Updated: 2023/07/25 17:27:38 by jede-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philosophers.h"
+#include "../philosophers.h"
 
 long long	ft_atoi(const char *str)
 {

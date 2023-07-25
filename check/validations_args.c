@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   validations_args.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jennifera <jennifera@student.42.fr>        +#+  +:+       +#+        */
+/*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 11:26:17 by jennifera         #+#    #+#             */
-/*   Updated: 2023/07/19 11:31:50 by jennifera        ###   ########.fr       */
+/*   Updated: 2023/07/25 13:28:16 by jede-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "../philosophers.h"
 
 int	validations_args(char **av)
 {

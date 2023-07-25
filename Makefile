@@ -6,7 +6,7 @@
 #    By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/07 16:25:09 by jede-ara          #+#    #+#              #
-#    Updated: 2023/07/24 15:53:57 by jede-ara         ###   ########.fr        #
+#    Updated: 2023/07/25 18:00:40 by jede-ara         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,15 +15,20 @@ CC = cc
 CFLAGS = -Wall -Werror -Wextra -g -pthread
 
 SRC = main.c \
-		actions/drop_fork.c \
-		actions/eat.c \
-		actions/take_fork.c \
-		check/ft_error.c \
+		init/init_thread.c \
+		init/philo_routine.c \
+		actions/ft_drop_fork.c \
+		actions/ft_eat.c \
+		actions/ft_message.c \
+		actions/ft_sleep.c \
+		actions/ft_take_fork.c \
+		actions/ft_thinking.c \
+		actions/ft_time.c \
+		check/check_die.c \
 		check/validations_args.c \
 		utils/ft_atoi.c \
 		utils/is_digit.c \
-		utils/is_positive.c \
-		utils/ft_strcmp.c \
+		utils/is_positive.c
 
 OBJ = $(SRC:%.c=%.o)
 

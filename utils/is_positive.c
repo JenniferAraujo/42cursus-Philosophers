@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   is_positive.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jennifera <jennifera@student.42.fr>        +#+  +:+       +#+        */
+/*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 11:30:56 by jennifera         #+#    #+#             */
-/*   Updated: 2023/07/19 11:32:28 by jennifera        ###   ########.fr       */
+/*   Updated: 2023/07/25 17:27:32 by jede-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philosophers.h"
+#include "../philosophers.h"
 
 int	is_positive(char *str)
 {

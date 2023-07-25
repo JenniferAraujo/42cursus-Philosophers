@@ -6,67 +6,51 @@
 /*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 20:43:15 by jede-ara          #+#    #+#             */
-/*   Updated: 2023/07/24 21:15:01 by jede-ara         ###   ########.fr       */
+/*   Updated: 2023/07/25 17:43:50 by jede-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-
-void	philo_create(t_philo *philos)
+int    init_args(t_data *data, char **av, int ac)
 {
-	int	i;
-
-	i = -1;
-	while (++i < philos->list->number_philo)
-	{
-		if (i % 2 == 0)
-		{
-			pthread_create(&philos[i].philo, NULL, &routiene, &philos[i]);
-			usleep(130);
-		}
-	}
-	i = -1;
-	while (++i < philos->list->number_philo)
-	{
-		if (i % 2 != 0)
-		{
-			pthread_create(&philos[i].philo, NULL, &routiene, &philos[i]);
-			usleep(130);
-		}
-	}
-}
-
-int    init_args(t_list *list, int ac, char **av)
-{
-    list->number_philo = ft_atoi(av[1]);
-    list->time_of_death = ft_atoi(av[2]);
-    list->time_eat = ft_atoi(av[3]);
-    list->time_sleep = ft_atoi(av[4]);
+    data->number_philo = ft_atoi(av[1]);
+    data->time_to_die = ft_atoi(av[2]);
+    data->time_to_eat = ft_atoi(av[3]);
+    data->time_to_sleep = ft_atoi(av[4]);
     if (ac == 6)
-        list->number_meals = ft_atoi(av[5]);
+        data->number_meals = ft_atoi(av[5]);
     else
-        list->number_meals = -1;
-    if (list->number_philo <= 0 || list->number_philo > 200 || list->time_of_death < 0
-		|| list->time_eat < 0 || list->time_sleep < 0)
-		return (0); //ft_erorr
+        data->number_meals = -1;
+    if (data->number_philo <= 0 || data->number_philo > 200 || data->time_to_die < 0
+		|| data->time_to_eat < 0 || data->time_to_sleep < 0)
+		return (0);
+    return (0);
 }
 
-int	philo_routine(t_philo *philo)
+int	ft_init(t_data *data, char **av, int ac)
 {
-	if (philo->id % 2 == 0)
-		pthread_mutex_lock(philo->right_fork);
-        pthread_mutex_lock(philo->left_fork);
-	else
-		
+	if (init_args(data, av, ac))
+		return (1);
+    return (0);
 }
 
 int main(int ac, char **av)
 {
-    //t_list  *list;
-    
+    t_data  *data;
+    t_philo	*philo;
+	
+	data = (t_data *)malloc(sizeof(t_data));
     if (ac < 5 || ac > 6)
         return (0);
     if (!validations_args(av))
 		return (0); //ft_erorr
+    ft_init(data, av, ac);
+	philo = malloc(sizeof(t_philo) * data->number_philo);
+	init_philo(philo, data);
+	data_init(data);
+	data->start_time = get_time();
+	philo_create(philo, data);
+	pthread_mutex_lock(&data->life);
+	return (0);
 }
