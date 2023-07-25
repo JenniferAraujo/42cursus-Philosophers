@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_message.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/19 12:48:57 by jennifera         #+#    #+#             */
-/*   Updated: 2023/07/25 18:06:38 by jede-ara         ###   ########.fr       */
+/*   Created: 2023/07/24 15:51:55 by jede-ara          #+#    #+#             */
+/*   Updated: 2023/07/24 15:53:17 by jede-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../philosophers.h"
 
-void	ft_message(t_philo *philo, char *str)
+int	ft_strcmp(char *s1, char *s2)
 {
-	pthread_mutex_lock(&philo->data->write);
-	printf("%d philo: %d %s\n", (get_time() - philo->data->start_time), philo->id, str);
-	pthread_mutex_unlock(&philo->data->write);
+	int	i = 0;
+	
+	while(s1[i] && s2[i] && s1[i] == s2[i])
+		i++;
+	return (s1[i] - s2[i]);
 }

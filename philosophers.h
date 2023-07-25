@@ -6,7 +6,7 @@
 /*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 17:24:24 by jede-ara          #+#    #+#             */
-/*   Updated: 2023/07/25 17:26:50 by jede-ara         ###   ########.fr       */
+/*   Updated: 2023/07/25 18:23:45 by jede-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,18 @@
 #include <pthread.h>
 #include <sys/time.h>
 
-# define THINKING "is thinking"
-# define SLEEPING "is sleeping"
-# define TAKE_FORK "has taken a fork"
-# define EATING "is eating"
-# define DIED "died"
+
+# define GREEN   "\033[32m"
+# define YELLOW  "\033[33m"
+# define BLUE    "\033[34m"
+# define CYAN    "\033[36m"
+# define RED     "\033[31m"
+
+# define THINKING GREEN "is thinking"
+# define SLEEPING YELLOW "is sleeping"
+# define TAKE_FORK BLUE "has taken a fork"
+# define EATING CYAN "is eating"
+# define DIED RED "died"
 
 typedef struct s_data 
 {

@@ -6,7 +6,7 @@
 /*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 12:31:49 by jede-ara          #+#    #+#             */
-/*   Updated: 2023/07/25 18:01:06 by jede-ara         ###   ########.fr       */
+/*   Updated: 2023/07/25 18:30:55 by jede-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	philo_table(t_philo	*philo)
 		ft_take_fork_left(philo);
 	ft_eat(philo);
 	ft_drop_forks(philo);
+	//ft_sleep(philo);
 }
 
 void	*philo_routine(void *philo)
@@ -35,7 +36,6 @@ void	*philo_routine(void *philo)
 		philo_table(philo);
 		ft_sleep(philo);
 		ft_thinking(philo);
-		printf("pensa nessa merda");
 		if (philosopher->eat_number == philosopher->data->number_meals)
 			philosopher->data->i++;
 		if (philosopher->data->i == philosopher->data->number_philo)

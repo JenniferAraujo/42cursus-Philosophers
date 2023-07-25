@@ -6,7 +6,7 @@
 /*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 14:53:34 by jede-ara          #+#    #+#             */
-/*   Updated: 2023/07/25 15:47:21 by jede-ara         ###   ########.fr       */
+/*   Updated: 2023/07/25 18:22:01 by jede-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,6 @@ void	*ft_eat(t_philo *philo)
 	ft_message(philo, EATING);
 	if (philo->data->number_meals != -1)
 		philo->eat_number++;
+	ft_usleep(philo->data->time_to_eat);
 	return (NULL);
 }
