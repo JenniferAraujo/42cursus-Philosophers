@@ -6,13 +6,13 @@
 #    By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/07 16:25:09 by jede-ara          #+#    #+#              #
-#    Updated: 2023/07/25 18:26:31 by jede-ara         ###   ########.fr        #
+#    Updated: 2023/07/26 18:30:26 by jede-ara         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = philosophers
 CC = cc
-CFLAGS = -Wall -Werror -Wextra -g -pthread
+CFLAGS = -Wall -Werror -Wextra -g -pthread #-fsanitize=thread -o3
 
 SRC = main.c \
 		init/init_thread.c \

@@ -6,7 +6,7 @@
 /*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 17:24:24 by jede-ara          #+#    #+#             */
-/*   Updated: 2023/07/25 18:23:45 by jede-ara         ###   ########.fr       */
+/*   Updated: 2023/07/26 18:43:50 by jede-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,18 @@
 #include <pthread.h>
 #include <sys/time.h>
 
-
 # define GREEN   "\033[32m"
 # define YELLOW  "\033[33m"
 # define BLUE    "\033[34m"
 # define CYAN    "\033[36m"
 # define RED     "\033[31m"
+# define RESET     "\033[0m"
 
-# define THINKING GREEN "is thinking"
-# define SLEEPING YELLOW "is sleeping"
-# define TAKE_FORK BLUE "has taken a fork"
-# define EATING CYAN "is eating"
-# define DIED RED "died"
+# define THINKING GREEN "is thinking"RESET
+# define SLEEPING YELLOW "is sleeping"RESET
+# define TAKE_FORK BLUE "has taken a fork"RESET
+# define EATING CYAN "is eating"RESET
+# define DIED RED "died"RESET
 
 typedef struct s_data 
 {
@@ -38,12 +38,14 @@ typedef struct s_data
 	int					time_to_die;
 	int					time_to_eat;
 	int					time_to_sleep;
+	int					time_dif;
 	int					number_meals;
-	pthread_mutex_t		mutex;
 	int					start_time;
+	pthread_mutex_t		mutex;
 	pthread_mutex_t		*forks;
 	pthread_mutex_t		life;
 	pthread_mutex_t		write;
+	pthread_mutex_t		dead;
 	int					i;
 }						t_data;
 
@@ -53,6 +55,7 @@ typedef struct s_philo
 	t_data				*data;
 	pthread_t			id_pthread;
 	int					time_of_death;
+	int					time_last_eat;
 	int					left_fork;
 	int					right_fork;
 	int					eat_number;

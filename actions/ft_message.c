@@ -6,7 +6,7 @@
 /*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/19 12:48:57 by jennifera         #+#    #+#             */
-/*   Updated: 2023/07/25 18:06:38 by jede-ara         ###   ########.fr       */
+/*   Updated: 2023/07/26 14:39:36 by jede-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 void	ft_message(t_philo *philo, char *str)
 {
 	pthread_mutex_lock(&philo->data->write);
-	printf("%d philo: %d %s\n", (get_time() - philo->data->start_time), philo->id, str);
+	printf("%d %d %s\n", (get_time() - philo->data->start_time), philo->id, str);
 	pthread_mutex_unlock(&philo->data->write);
 }

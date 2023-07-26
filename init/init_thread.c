@@ -6,7 +6,7 @@
 /*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 15:28:12 by jede-ara          #+#    #+#             */
-/*   Updated: 2023/07/25 18:28:32 by jede-ara         ###   ########.fr       */
+/*   Updated: 2023/07/26 18:46:10 by jede-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	init_philo(t_philo *philo, t_data *data)
 		philo[i].id = i + 1;
 		philo[i].data = data;
 		philo[i].time_of_death = 0;
+		philo[i].time_last_eat = 0;
 		philo[i].left_fork = i;
 		philo[i].right_fork = (i + 1) % data->number_philo;
 		philo[i].eat_number = 0;
@@ -58,6 +59,5 @@ void	philo_create(t_philo *philo, t_data *data)
 			return ;
 		}
 		i++;
-		usleep(100);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 20:43:15 by jede-ara          #+#    #+#             */
-/*   Updated: 2023/07/25 17:43:50 by jede-ara         ###   ########.fr       */
+/*   Updated: 2023/07/26 18:45:51 by jede-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int    init_args(t_data *data, char **av, int ac)
     data->time_to_die = ft_atoi(av[2]);
     data->time_to_eat = ft_atoi(av[3]);
     data->time_to_sleep = ft_atoi(av[4]);
+    data->time_dif = data->time_to_eat - data->time_to_sleep + 10;
     if (ac == 6)
         data->number_meals = ft_atoi(av[5]);
     else
