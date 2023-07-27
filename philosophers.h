@@ -6,7 +6,7 @@
 /*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 17:24:24 by jede-ara          #+#    #+#             */
-/*   Updated: 2023/07/26 18:43:50 by jede-ara         ###   ########.fr       */
+/*   Updated: 2023/07/27 16:39:38 by jede-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int         is_positive(char *str); // ok
 
 /*                          ACTIONS                 */
 void	ft_message(t_philo *philo, char *str); // ok
-void	*ft_eat(t_philo *philo); // ok
+void	*ft_eat(void *philo); // ok
 int    *ft_take_fork_right(t_philo   *philo); // ok
 int    *ft_take_fork_left(t_philo   *philo); // ok
 int		*ft_drop_forks(t_philo *philo); // ok

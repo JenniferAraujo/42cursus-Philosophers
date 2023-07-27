@@ -6,20 +6,27 @@
 /*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 18:02:35 by jede-ara          #+#    #+#             */
-/*   Updated: 2023/07/25 15:50:16 by jede-ara         ###   ########.fr       */
+/*   Updated: 2023/07/27 16:13:54 by jede-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../philosophers.h"
 
-//destroy mutex 
-void    ft_free(t_data  *data)
+void    ft_free(t_philo *philo, t_data  *data)
 {
-    pthread_mutex_destroy()
-    free(list);
-}
+    int i;
+    int number;
 
-//chamar a ft_exit
+    i = -1;
+    number = data->number_philo;
+    while (++i < number)
+		pthread_mutex_destroy(&data->forks[i]);
+    pthread_mutex_destroy();
+    pthread_mutex_destroy();
+    pthread_mutex_destroy();
+    pthread_mutex_destroy();
+    free();
+}
 int ft_error(char *str, t_list  *list)
 {
     

@@ -6,7 +6,7 @@
 /*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 13:23:04 by jede-ara          #+#    #+#             */
-/*   Updated: 2023/07/26 18:48:03 by jede-ara         ###   ########.fr       */
+/*   Updated: 2023/07/27 19:01:18 by jede-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,30 @@
 
 void	*check_die(void *philo)
 {
-	t_philo	*philosophers;
-
-	philosophers = (t_philo *)philo;
+	t_philo	*philosopher;
+	
+	philosopher = (t_philo *)philo;
+	philosopher ->time_last_eat = get_time() - philosopher ->data->start_time;
+	philosopher->time_of_death = get_time() - philosopher->time_last_eat - philosopher->data->start_time;
+	if (philosopher ->data->time_to_die < philosopher ->time_of_death)
+	{
+		//printf("time to die: %d\n time of death:%d\n", philo->data->time_to_die, philo->time_of_death);
+		ft_message(philo, DIED);
+		exit(0);
+	}
 	while (1)
 	{
-		if ((get_time() - philosophers->data->start_time) > philosophers->time_of_death)
+		if ((get_time() - philosopher->data->start_time) > philosopher->time_of_death)// se o tempo atual for maior do que o tempo que ele comeu
 		{
-			pthread_mutex_lock(&philosophers->data->write);
-			printf("%d %d\n", get_time() - philosophers->data->start_time, philosophers->id);
-			pthread_mutex_unlock(&philosophers->data->life);
+			pthread_mutex_lock(&philosopher->data->write);
+			printf("%d %d died\n", get_time() - philosopher->data->start_time, philosopher->id);
+			pthread_mutex_unlock(&philosopher->data->life);
 		}
-		if (philosophers->data->i == philosophers->data->number_philo)
+		if (philosopher->data->i == philosopher->data->number_philo)
 		{
-			pthread_mutex_lock(&philosophers->data->write);
-			printf("%d %d\n", get_time() - philosophers->data->start_time, philosophers->id);
-			pthread_mutex_unlock(&philosophers->data->life);
+			pthread_mutex_lock(&philosopher->data->write);
+			printf("%d %d\n", get_time() - philosopher->data->start_time, philosopher->id);
+			pthread_mutex_unlock(&philosopher->data->life);
 		}
 	}
 	return (NULL);

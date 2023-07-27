@@ -6,7 +6,7 @@
 /*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 12:31:49 by jede-ara          #+#    #+#             */
-/*   Updated: 2023/07/26 18:48:31 by jede-ara         ###   ########.fr       */
+/*   Updated: 2023/07/27 19:05:59 by jede-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,16 @@
 
 void	philo_table(t_philo	*philo)
 {
-	if (philo->id % 2 == 0)
-	{
+	t_philo	*philosopher;
+
+	philosopher = (t_philo *)philo;
+	if (philosopher->id % 2 == 0)
 		ft_take_fork_left(philo);
-	}
 	else
 	{
-		if (philo->data->number_philo % 2 != 0)
-			if (philo->data->time_dif > 0)
-				ft_usleep(philo->data->time_dif);
+		if (philosopher->data->number_philo % 2 != 0)
+			if (philosopher->data->time_dif > 0)
+				ft_usleep(philosopher->data->time_dif);
 		ft_take_fork_right(philo);
 	}
 	ft_eat(philo);
@@ -32,11 +33,12 @@ void	philo_table(t_philo	*philo)
 void	*philo_routine(void *philo)
 {
 	t_philo		*philosopher;
-	//pthread_t	pthread_id;
+//	pthread_t	pthread_id;
 
 	philosopher = (t_philo *)philo;
 	//philosopher->time_of_death = get_time() - philosopher->data->start_time + philosopher->data->time_to_die;
 	//pthread_create(&pthread_id, NULL, check_die, philo);
+	
 	if (philosopher->id % 2 != 0)
 		ft_usleep(10);
 	while (1)
