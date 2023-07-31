@@ -6,7 +6,7 @@
 /*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 15:00:03 by jede-ara          #+#    #+#             */
-/*   Updated: 2023/07/27 19:12:39 by jede-ara         ###   ########.fr       */
+/*   Updated: 2023/07/31 19:10:59 by jede-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,6 @@ int    *ft_take_fork_right(t_philo   *philo)
         pthread_mutex_lock(&(philosopher->data->forks[philosopher->right_fork]));
         ft_message(philo, TAKE_FORK);
     }
-    if (philosopher->data->number_philo == 1)//jennifer do futuro lide com isso
-	{
-		ft_message(philo, DIED);
-		exit (0);
-	}
 	pthread_mutex_lock(&(philosopher->data->forks[philosopher->left_fork]));
 	ft_message(philo, TAKE_FORK);
     return (0);

@@ -6,7 +6,7 @@
 /*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 20:43:15 by jede-ara          #+#    #+#             */
-/*   Updated: 2023/07/27 16:24:32 by jede-ara         ###   ########.fr       */
+/*   Updated: 2023/07/31 19:47:40 by jede-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,16 +42,16 @@ int main(int ac, char **av)
     t_philo	*philo;
 	
 	data = (t_data *)malloc(sizeof(t_data));
+	philo = malloc(sizeof(t_philo) * data->number_philo);
     if (ac < 5 || ac > 6)
         return (0);
     if (!validations_args(av))
 		return (0); //ft_erorr
     ft_init(data, av, ac);
-	philo = malloc(sizeof(t_philo) * data->number_philo);
 	init_philo(philo, data);
 	data_init(data);
 	data->start_time = get_time();
 	philo_create(philo, data);
-	pthread_mutex_lock(&data->life);
+	pthread_mutex_lock(&data->dead);
 	return (0);
 }

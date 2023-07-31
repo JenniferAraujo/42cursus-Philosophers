@@ -6,7 +6,7 @@
 /*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 12:31:49 by jede-ara          #+#    #+#             */
-/*   Updated: 2023/07/27 19:05:59 by jede-ara         ###   ########.fr       */
+/*   Updated: 2023/07/31 19:12:13 by jede-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,10 @@ void	philo_table(t_philo	*philo)
 void	*philo_routine(void *philo)
 {
 	t_philo		*philosopher;
-//	pthread_t	pthread_id;
+	pthread_t	pthread_id;
 
 	philosopher = (t_philo *)philo;
-	//philosopher->time_of_death = get_time() - philosopher->data->start_time + philosopher->data->time_to_die;
-	//pthread_create(&pthread_id, NULL, check_die, philo);
-	
+	pthread_create(&pthread_id, NULL, (void *)check_die, philo);
 	if (philosopher->id % 2 != 0)
 		ft_usleep(10);
 	while (1)

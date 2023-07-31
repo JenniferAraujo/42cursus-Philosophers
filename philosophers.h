@@ -6,7 +6,7 @@
 /*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 17:24:24 by jede-ara          #+#    #+#             */
-/*   Updated: 2023/07/27 16:39:38 by jede-ara         ###   ########.fr       */
+/*   Updated: 2023/07/31 19:17:22 by jede-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@
 # define TAKE_FORK BLUE "has taken a fork"RESET
 # define EATING CYAN "is eating"RESET
 # define DIED RED "died"RESET
+# define MESSAGE "ERROR"
 
 typedef struct s_data 
 {
@@ -41,11 +42,10 @@ typedef struct s_data
 	int					time_dif;
 	int					number_meals;
 	int					start_time;
-	pthread_mutex_t		mutex;
 	pthread_mutex_t		*forks;
-	pthread_mutex_t		life;
-	pthread_mutex_t		write;
 	pthread_mutex_t		dead;
+	pthread_mutex_t		write;
+	pthread_mutex_t		eat;
 	int					i;
 }						t_data;
 
@@ -89,6 +89,5 @@ int		ft_usleep(int time);
 void	*check_die(void *philo);
 //void    ft_free(t_data  *data);
 //int		ft_error();
-int		validations_args(char **av);
 
 #endif

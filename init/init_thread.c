@@ -6,7 +6,7 @@
 /*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 15:28:12 by jede-ara          #+#    #+#             */
-/*   Updated: 2023/07/27 16:24:45 by jede-ara         ###   ########.fr       */
+/*   Updated: 2023/07/31 19:23:23 by jede-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,10 @@ void	data_init(t_data *data)
 	int	i;
 
 	i = 0;
-	pthread_mutex_init(&data->life, NULL);
+	pthread_mutex_init(&data->dead, NULL);
 	pthread_mutex_init(&data->write, NULL);
-	pthread_mutex_lock(&data->life);
+	pthread_mutex_init(&data->eat, NULL);
+	pthread_mutex_lock(&data->dead);
 	data->forks = (pthread_mutex_t *)malloc(sizeof(pthread_mutex_t) * data->number_philo);
 	while (i < data->number_philo)
 	{
