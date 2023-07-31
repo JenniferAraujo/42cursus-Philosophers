@@ -6,7 +6,7 @@
 /*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 13:23:04 by jede-ara          #+#    #+#             */
-/*   Updated: 2023/07/31 19:47:59 by jede-ara         ###   ########.fr       */
+/*   Updated: 2023/07/31 20:42:41 by jede-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	*check_die(void *philo)
 	pthread_mutex_unlock(&(philosopher)->data->eat);
 	while (1)
 	{
+		pthread_mutex_lock(&(philosopher)->data->eat);
 		if ((get_time() - philosopher->data->start_time) > philosopher->time_of_death)// se o tempo atual for maior do que o tempo que ele comeu
 		{
 			pthread_mutex_lock(&philosopher->data->write);
@@ -30,6 +31,7 @@ void	*check_die(void *philo)
 			pthread_mutex_unlock(&philosopher->data->write);
 			pthread_mutex_unlock(&philosopher->data->dead);
 		}
+		pthread_mutex_unlock(&(philosopher)->data->eat);
 		if (philosopher->data->i == philosopher->data->number_philo)
 		{
 			pthread_mutex_lock(&philosopher->data->write);
