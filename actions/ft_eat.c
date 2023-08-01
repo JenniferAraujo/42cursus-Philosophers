@@ -6,7 +6,7 @@
 /*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 14:53:34 by jede-ara          #+#    #+#             */
-/*   Updated: 2023/07/31 20:43:49 by jede-ara         ###   ########.fr       */
+/*   Updated: 2023/08/01 20:38:43 by jede-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,12 @@ void	*ft_eat(void *philo)
 	philosopher = (t_philo *)philo;
 	ft_message(philo, EATING);
 	pthread_mutex_lock(&(philosopher)->data->eat);
-	philosopher->time_of_death += philosopher->data->time_to_die;
+	philosopher->time_last_eat = get_time() - philosopher->data->start_time;
 	pthread_mutex_unlock(&(philosopher)->data->eat);
+	ft_usleep(philosopher->data->time_to_eat);
+	pthread_mutex_lock(&(philosopher)->data->full);
 	if (philosopher->data->number_meals != -1)
 		philosopher->eat_number++;
-	ft_usleep(philosopher->data->time_to_eat);
+	pthread_mutex_unlock(&(philosopher)->data->full);
 	return (NULL);
 }

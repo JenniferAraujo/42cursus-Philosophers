@@ -6,7 +6,7 @@
 /*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/14 19:51:43 by jede-ara          #+#    #+#             */
-/*   Updated: 2023/07/31 19:11:16 by jede-ara         ###   ########.fr       */
+/*   Updated: 2023/08/01 21:54:07 by jede-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int get_time(void)
     struct timeval		tv;
 
 	gettimeofday(&tv, NULL);
-	return ((tv.tv_sec * 1000) + (tv.tv_usec / 1000)); //segundos * 1000 para converter para milissegundos + o número de microssegundos / 1000 para converter para milissegundos
+	return ((tv.tv_sec * 1000) + (tv.tv_usec / 1000));
 }
 
 int	ft_usleep(int time)

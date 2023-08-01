@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jennifera <jennifera@student.42.fr>        +#+  +:+       +#+         #
+#    By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/07 16:25:09 by jede-ara          #+#    #+#              #
-#    Updated: 2023/08/01 12:08:34 by jennifera        ###   ########.fr        #
+#    Updated: 2023/08/01 22:20:19 by jede-ara         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,9 +27,11 @@ SRC = main.c \
 		check/check_die.c \
 		check/validations_args.c \
 		check/ft_error.c \
+		check/one_philo.c \
 		utils/ft_atoi.c \
 		utils/is_digit.c \
-		utils/is_positive.c
+		utils/is_positive.c \
+		utils/set_mutex.c
 
 OBJ = $(SRC:%.c=%.o)
 

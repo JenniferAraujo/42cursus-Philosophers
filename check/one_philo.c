@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_message.c                                       :+:      :+:    :+:   */
+/*   one_philo.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/19 12:48:57 by jennifera         #+#    #+#             */
-/*   Updated: 2023/08/01 21:29:55 by jede-ara         ###   ########.fr       */
+/*   Created: 2023/08/01 22:10:50 by jede-ara          #+#    #+#             */
+/*   Updated: 2023/08/01 22:38:18 by jede-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../philosophers.h"
 
-void	ft_message(t_philo *philo, char *str)
+void    one_philo(t_philo  *philo)
 {
-	pthread_mutex_lock(&(philo)->data->end);
-	if (philo->data->death == 1 || philo->data->meals == 1)
-	{
-		pthread_mutex_unlock(&(philo)->data->end);
-		return;
-	}
-	else
-		pthread_mutex_unlock(&(philo)->data->end);
-	pthread_mutex_lock(&philo->data->write);
-	printf("%d %d %s\n", (get_time() - philo->data->start_time), philo->id, str);
-	pthread_mutex_unlock(&philo->data->write);
+    int time;
+    
+    time = philo->data->time_to_die;
+    ft_message(philo, TAKE_FORK);
+    ft_usleep(time);
 }

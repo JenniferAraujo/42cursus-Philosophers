@@ -6,7 +6,7 @@
 /*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/13 21:02:49 by jede-ara          #+#    #+#             */
-/*   Updated: 2023/07/25 17:27:38 by jede-ara         ###   ########.fr       */
+/*   Updated: 2023/08/01 19:08:49 by jede-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,26 @@
 
 long long	ft_atoi(const char *str)
 {
-	int			i;
-	int			s;
-	long long	res;
+	int			sign;
+	long long	result;
 
-	i = 0;
-	s = 1;
-	res = 0;
-	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t'
-		|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r')
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	sign = 1;
+	result = 0;
+	while (*str == ' ' || *str == '\n' || *str == '\t'
+		|| *str == '\v' || *str == '\f' || *str == '\r')
+		str++;
+	if (*str == '-' || *str == '+')
 	{
-		if (str[i] == '-')
-			s = -1;
-		i++;
+		if (*str == '-')
+			sign = -1;
+		str++;
 	}
-	while (str[i] >= '0' && str[i] <= '9')
+	while (*str >= '0' && *str <= '9')
 	{
-		res = (res * 10) + (str[i] - '0');
-		i++;
+		if ((result > 2147483647 && sign == 1) || (result > 2147483648 && sign == -1))
+					return (0);
+		result = (result * 10) + (*str - '0');
+		str++;
 	}
-	return (res * s);
+	return (result * sign);
 }

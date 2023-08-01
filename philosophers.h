@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jennifera <jennifera@student.42.fr>        +#+  +:+       +#+        */
+/*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 17:24:24 by jede-ara          #+#    #+#             */
-/*   Updated: 2023/08/01 12:07:19 by jennifera        ###   ########.fr       */
+/*   Updated: 2023/08/01 22:24:02 by jede-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include <stdio.h>
 #include <pthread.h>
 #include <sys/time.h>
+#include <limits.h>
 
 # define GREEN   "\033[32m"
 # define YELLOW  "\033[33m"
@@ -42,10 +43,14 @@ typedef struct s_data
 	int					time_dif;
 	int					number_meals;
 	int					start_time;
+	int					meals;
+	int					death;
 	pthread_mutex_t		*forks;
-	pthread_mutex_t		dead;
+	//pthread_mutex_t		dead;
 	pthread_mutex_t		write;
 	pthread_mutex_t		eat;
+	pthread_mutex_t		full;
+	pthread_mutex_t		end;
 	int					i;
 }						t_data;
 
@@ -65,7 +70,10 @@ typedef struct s_philo
 int     validations_args(char **av);
 void	init_philo(t_philo *philo, t_data *data);
 void	data_init(t_data *data);
-void	philo_create(t_philo *philo, t_data *data);
+void	philo_create(t_philo *philo, t_data *data, pthread_t *pthread_id);
+void	philo_join(t_philo *philo, t_data *data, pthread_t *pthread_id);
+void    set_mutex(int *ag, int content, pthread_mutex_t *mutex);
+void    one_philo(t_philo  *philo);
 void	*philo_routine(void *philo);
 int     main(int ac, char **av);
 
