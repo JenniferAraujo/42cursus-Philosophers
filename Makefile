@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+         #
+#    By: jennifera <jennifera@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/07 16:25:09 by jede-ara          #+#    #+#              #
-#    Updated: 2023/07/31 18:55:37 by jede-ara         ###   ########.fr        #
+#    Updated: 2023/08/01 12:08:34 by jennifera        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRC = main.c \
 		actions/ft_time.c \
 		check/check_die.c \
 		check/validations_args.c \
+		check/ft_error.c \
 		utils/ft_atoi.c \
 		utils/is_digit.c \
 		utils/is_positive.c

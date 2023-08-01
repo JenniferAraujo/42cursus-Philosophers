@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jennifera <jennifera@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/07 17:24:24 by jede-ara          #+#    #+#             */
-/*   Updated: 2023/07/31 19:17:22 by jede-ara         ###   ########.fr       */
+/*   Updated: 2023/08/01 12:07:19 by jennifera        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@
 # define TAKE_FORK BLUE "has taken a fork"RESET
 # define EATING CYAN "is eating"RESET
 # define DIED RED "died"RESET
-# define MESSAGE "ERROR"
+# define ERROR "Error\n"
 
 typedef struct s_data 
 {
@@ -87,7 +87,7 @@ int		ft_usleep(int time);
 
 /*							CHECK						*/
 void	*check_die(void *philo);
-//void    ft_free(t_data  *data);
+void    ft_free(t_philo *philo, t_data  *data);
 //int		ft_error();
 
 #endif
