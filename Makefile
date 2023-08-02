@@ -6,11 +6,11 @@
 #    By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/07 16:25:09 by jede-ara          #+#    #+#              #
-#    Updated: 2023/08/02 22:51:18 by jede-ara         ###   ########.fr        #
+#    Updated: 2023/08/03 00:09:04 by jede-ara         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = philosophers
+NAME = philo
 CC = cc
 CFLAGS = -Wall -Werror -Wextra -pthread #-fsanitize=address -o3
 
