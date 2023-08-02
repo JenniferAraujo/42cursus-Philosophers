@@ -18,7 +18,7 @@ void	ft_message(t_philo *philo, char *str)
 	if (philo->data->death == 1 || philo->data->meals == 1)
 	{
 		pthread_mutex_unlock(&(philo)->data->end);
-		return;
+		return ;
 	}
 	else
 		pthread_mutex_unlock(&(philo)->data->end);

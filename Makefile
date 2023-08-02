@@ -6,13 +6,13 @@
 #    By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/07 16:25:09 by jede-ara          #+#    #+#              #
-#    Updated: 2023/08/01 22:20:19 by jede-ara         ###   ########.fr        #
+#    Updated: 2023/08/02 22:51:18 by jede-ara         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = philosophers
 CC = cc
-CFLAGS = -Wall -Werror -Wextra -g -pthread -fsanitize=thread -o3
+CFLAGS = -Wall -Werror -Wextra -pthread #-fsanitize=address -o3
 
 SRC = main.c \
 		init/init_thread.c \
@@ -25,13 +25,14 @@ SRC = main.c \
 		actions/ft_thinking.c \
 		actions/ft_time.c \
 		check/check_die.c \
+		check/check_full.c \
 		check/validations_args.c \
-		check/ft_error.c \
+		check/ft_free.c \
 		check/one_philo.c \
 		utils/ft_atoi.c \
 		utils/is_digit.c \
 		utils/is_positive.c \
-		utils/set_mutex.c
+		utils/set_args.c
 
 OBJ = $(SRC:%.c=%.o)
 

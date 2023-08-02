@@ -6,7 +6,7 @@
 /*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 12:31:49 by jede-ara          #+#    #+#             */
-/*   Updated: 2023/08/01 22:36:23 by jede-ara         ###   ########.fr       */
+/*   Updated: 2023/08/02 22:22:56 by jede-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ void	philo_table(t_philo	*philo)
 	t_philo	*philosopher;
 
 	philosopher = (t_philo *)philo;
-	 if (philo->data->number_philo == 1)
-    {
-        one_philo(philo);
-        return ;
-    }
+	if (philo->data->number_philo == 1)
+	{
+		one_philo(philo);
+		return ;
+	}
 	if (philosopher->id % 2 == 0)
 		ft_take_fork_left(philo);
 	else
@@ -57,13 +57,7 @@ void	*philo_routine(void *philo)
 		philo_table(philo);
 		ft_sleep(philo);
 		ft_thinking(philo);
-		pthread_mutex_lock(&(philosopher)->data->full);
-		if (philosopher->eat_number == philosopher->data->number_meals)
-		{
-			philosopher->eat_number = -1;
-			philosopher->data->i++;
-		}
-		pthread_mutex_unlock(&(philosopher)->data->full);
+		check_full(philo);
 	}
 	return (NULL);
 }

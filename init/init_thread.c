@@ -6,7 +6,7 @@
 /*   By: jede-ara <jede-ara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/25 15:28:12 by jede-ara          #+#    #+#             */
-/*   Updated: 2023/08/01 21:52:19 by jede-ara         ###   ########.fr       */
+/*   Updated: 2023/08/02 22:13:04 by jede-ara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,16 @@ void	data_init(t_data *data)
 	data->i = 0;
 	data->meals = 0;
 	data->death = 0;
-	//pthread_mutex_init(&data->dead, NULL);
+	data->count = 0;
+	data->t_of_death = 0;
+	data->temp = 0;
 	pthread_mutex_init(&data->write, NULL);
 	pthread_mutex_init(&data->eat, NULL);
-	//pthread_mutex_lock(&data->dead);
-	data->forks = (pthread_mutex_t *)malloc(sizeof(pthread_mutex_t) * data->number_philo);
+	pthread_mutex_init(&data->full, NULL);
+	pthread_mutex_init(&data->end, NULL);
+	pthread_mutex_init(&data->data, NULL);
+	data->forks = (pthread_mutex_t *)malloc(sizeof(pthread_mutex_t)
+			* data->number_philo);
 	while (i < data->number_philo)
 	{
 		pthread_mutex_init(&(data->forks[i]), NULL);
@@ -57,7 +62,8 @@ void	philo_create(t_philo *philo, t_data *data, pthread_t *pthread_id)
 	i = 0;
 	while (i < data->number_philo)
 	{
-		if (pthread_create(&philo[i].id_pthread, NULL, philo_routine, (void *)&philo[i]))
+		if (pthread_create(&philo[i].id_pthread, NULL,
+				philo_routine, (void *)&philo[i]))
 		{
 			printf("Error\n");
 			return ;
@@ -66,6 +72,7 @@ void	philo_create(t_philo *philo, t_data *data, pthread_t *pthread_id)
 	}
 	pthread_create(pthread_id, NULL, (void *)check_die, philo);
 }
+
 void	philo_join(t_philo *philo, t_data *data, pthread_t *pthread_id)
 {
 	int	i;

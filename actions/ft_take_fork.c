@@ -12,42 +12,44 @@
 
 #include "../philosophers.h"
 
-int    *ft_take_fork_right(t_philo   *philo)
+int	*ft_take_fork_right(t_philo	*philo)
 {
-    t_philo	*philosopher;
+	t_philo	*philosopher;
 
 	philosopher = (t_philo *)philo;
-    if (philo->id == philo->data->number_philo)
-    {
-        pthread_mutex_lock(&(philosopher->data->forks[0]));
-        ft_message(philo, TAKE_FORK);
-    }
-    else
-    {
-        pthread_mutex_lock(&(philosopher->data->forks[philosopher->right_fork]));
-        ft_message(philo, TAKE_FORK);
-    }
+	if (philo->id == philo->data->number_philo)
+	{
+		pthread_mutex_lock(&(philosopher->data->forks[0]));
+		ft_message(philo, TAKE_FORK);
+	}
+	else
+	{
+		pthread_mutex_lock(&(philosopher->data
+				->forks[philosopher->right_fork]));
+		ft_message(philo, TAKE_FORK);
+	}
 	pthread_mutex_lock(&(philosopher->data->forks[philosopher->left_fork]));
 	ft_message(philo, TAKE_FORK);
-    return (0);
+	return (0);
 }
 
-int    *ft_take_fork_left(t_philo   *philo)
+int	*ft_take_fork_left(t_philo	*philo)
 {
-    t_philo	*philosopher;
+	t_philo	*philosopher;
 
 	philosopher = (t_philo *)philo;
 	pthread_mutex_lock(&(philosopher->data->forks[philosopher->left_fork]));
 	ft_message(philo, TAKE_FORK);
 	if (philo->id == philo->data->number_philo)
-    {
-        pthread_mutex_lock(&(philosopher->data->forks[0]));
-        ft_message(philo, TAKE_FORK);
-    }
-    else
-    {
-        pthread_mutex_lock(&(philosopher->data->forks[philosopher->right_fork]));
-        ft_message(philo, TAKE_FORK);
-    }
-    return (0);
+	{
+		pthread_mutex_lock(&(philosopher->data->forks[0]));
+		ft_message(philo, TAKE_FORK);
+	}
+	else
+	{
+		pthread_mutex_lock(&(philosopher->data
+				->forks[philosopher->right_fork]));
+		ft_message(philo, TAKE_FORK);
+	}
+	return (0);
 }

@@ -30,8 +30,9 @@ long long	ft_atoi(const char *str)
 	}
 	while (*str >= '0' && *str <= '9')
 	{
-		if ((result > 2147483647 && sign == 1) || (result > 2147483648 && sign == -1))
-					return (0);
+		if ((result > 2147483647 && sign == 1)
+			|| (result > 2147483648 && sign == -1))
+			return (0);
 		result = (result * 10) + (*str - '0');
 		str++;
 	}
